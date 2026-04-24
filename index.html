@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Safety Shoes ID - Premium Safety Footwear</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #0f1419;
+            --primary-blue: #1e3a8a;
+            --gold: #d4a017;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --gray: #64748b;
+            --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-hover: 0 40px 80px -20px rgba(0, 0, 0, 0.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--gray);
+            overflow-x: hidden;
+            background: var(--light-gray);
+        }
+
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 20, 25, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            background: linear-gradient(135deg, var(--gold), #f1c453);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(212, 160, 23, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(30, 58, 138, 0.2) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, var(--gold), #f1c453);
+            color: var(--primary-dark);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            text-align: center;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 500;
+        }
+
+        /* PRODUCTS SECTION - 5 MODEL LENGKAP */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .product-image {
+            height: 250px;
+            background: linear-gradient(135deg, #f0f4f8, #e2e8f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary-blue);
+            position: relative;
+        }
+
+        .product-image i {
+            font-size: 4.5rem;
+            opacity: 0.1;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gold);
+            color: var(--primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .product-content {
+            padding: 2.5rem;
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 0.1rem;
+        }
+
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .product-desc {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .feature-tag {
+            background: var(--light-gray);
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            color: var(--primary-blue);
+        }
+
+        .buy-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .buy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(30, 58, 138, 0.4);
+        }
+
+        /* FEATURES */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--gold), #f1c453);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 0 2rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .products-grid { grid-template-columns: 1fr; }
+            .hero { margin-top: 70px; padding-top: 70px; }
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in:nth-child(4) { animation-delay: 0.4s; }
+        .fade-in:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">IRON SAFETY SHOES <span>ID</span></div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#features">Features</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in">LANGKAH KUAT, PERLINDUNGAN MAKSIMAL</h1>
+            <p class="fade-in">Sepatu safety premium dengan desain elegan untuk profesional yang mengutamakan kualitas dan keamanan.</p>
+            <a href="#products" class="cta-button fade-in">
+                <i class="fas fa-shopping-bag"></i>
+                Lihat Produk
+            </a>
+        </div>
+    </section>
+
+    <!-- PRODUCTS - 5 MODEL LENGKAP -->
+    <section id="products" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Koleksi Premium (5 Model)</h2>
+            
+            <!-- PRODUK 1 -->
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <i class="fas fa-boot"></i>
+                        <div class="product-badge">BEST SELLER</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="stars">⭐⭐⭐⭐⭐ 5.0</div>
+                        <h3 class="product-title">Iron Pro Max</h3>
+                        <p class="product-desc">Perlindungan steel toe maksimal dengan desain premium untuk pekerjaan konstruksi berat.</p>
+                        <div class="product-price">Rp 899.000</div>
+                        <div class="product-features">
+                            <span class="feature-tag">Steel Toe</span>
+                            <span class="feature-tag">Anti Slip</span>
+                            <span class="feature-tag">Breathable</span>
+                        </div>
+                        <button class="buy-btn">Beli Sekarang</button>
+                    </div>
+                </div>
+
+                <!-- PRODUK 2 -->
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="product-content">
+                        <div class="stars">⭐⭐⭐⭐⭐ 4.9</div>
+                        <h3 class="product-title">Iron Guard Elite</h3>
+                        <p class="product-desc">Material kulit premium dengan grip anti slip super untuk kondisi basah dan licin.</p>
+                        <div class="product-price">Rp 1.299.000</div>
+                        <div class="product-features">
+                            <span class="feature-tag">Waterproof</span>
+                            <span class="feature-tag">Anti Puncture</span>
+                            <span class="feature-tag">Heavy Duty</span>
+                        </div>
+                        <button class="buy-btn">Beli Sekarang</button>
+                    </div>
+                </div>
+
+                <!-- PRODUK 3 -->
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <div class="product-content">
+                        <div class="stars">⭐⭐⭐⭐⭐ 4.8</div>
+                        <h3 class="product-title">Iron Flex Comfort</h3>
+                        <p class="product-desc">Ringan 30% lebih enteng dengan sol ergonomis untuk kenyamanan 12 jam kerja.</p>
+                        <div class="product-price">Rp 749.000</div>
+                        <div class="product-features">
+                            <span class="feature-tag">Lightweight</span>
+                            <span class="feature-tag">Cushion</span>
+                            <span class="feature-tag">Flexible</span>
+                        </div>
+                        <button class="buy-btn">Beli Sekarang</button>
+                    </div>
+                </div>
+
+                <!-- PRODUK 4 -->
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="product-content">
+                        <div class="stars">⭐⭐⭐⭐⭐ 4.9</div>
+                        <h3 class="product-title">Iron Heavy Duty X</h3>
+                        <p class="product-desc">Untuk kerja ekstrem dengan ketahanan 2x lipat dari sepatu safety biasa.</p>
+                        <div class="product-price">Rp 1.499.000</div>
+                        <div class="product-features">
+                            <span class="feature-tag">Extra Durable</span>
+                            <span class="feature-tag">Impact Resistant</span>
+                            <span class="feature-tag">Chemical Proof</span>
+                        </div>
+                        <button class="buy-btn">Beli Sekarang</button>
+                    </div>
+                </div>
+
+                <!-- PRODUK 5 -->
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <i class="fas fa-city"></i>
+                        <div class="product-badge">NEW</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="stars">⭐⭐⭐⭐⭐ 5.0</div>
+                        <h3 class="product-title">Iron Urban Safety</h3>
+                        <p class="product-desc">Safety shoes dengan gaya urban modern, cocok kerja kantor lapangan.</p>
+                        <div class="product-price">Rp 999.000</div>
+                        <div class="product-features">
+                            <span class="feature-tag">Stylish</span>
+                            <span class="feature-tag">Steel Toe</span>
+                            <span class="feature-tag">Casual Look</span>
+                        </div>
+                        <button class="buy-btn">Beli Sekarang</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section" style="background: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title fade-in">Keunggulan Iron Safety</h2>
+            <div class="features-grid">
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div>
+                        <h4>Material Premium</h4>
